@@ -13,6 +13,9 @@
     <p>Method: {{ sayHello() }}</p>
     <p>If statement: {{ isOk ? 'I am Ok' : 'I am not Ok' }}</p>
     <p>Functions: {{ string.split('').reverse().join('') }}</p>
+    <h1>
+      <a v-bind:href="url">Google</a>
+    </h1>
   </div>
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
@@ -22,7 +25,8 @@
         name: 'Vue!',
         number: 100,
         isOk: false,
-        string: 'My name is Tanya'
+        string: 'My name is Tanya',
+        url: 'https://www.google.ru/'
       },
       methods: {
         changeName: function(event) {
