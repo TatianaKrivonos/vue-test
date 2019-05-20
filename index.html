@@ -16,6 +16,7 @@
     <h1>
       <a v-bind:href="url">Google</a>
     </h1>
+    <h2 v-html="link"></h2>
   </div>
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
@@ -26,7 +27,8 @@
         number: 100,
         isOk: false,
         string: 'My name is Tanya',
-        url: 'https://www.google.ru/'
+        url: 'https://www.google.ru/',
+        link: '<a href="https://www.google.ru">Google</a>'
       },
       methods: {
         changeName: function(event) {
