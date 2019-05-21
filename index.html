@@ -73,6 +73,12 @@
     <input type="text" v-model="type">
   </div>
 
+  <div id="app6">
+    <ul>
+      <li v-for="(person, index) of people"> {{ index+1 }}. {{ person.name}} - {{ person.age }}</li>
+    </ul>
+  </div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
     new Vue({
@@ -165,6 +171,17 @@
       el: '#app5',
       data: {
         type: 'a'
+      }
+    }); 
+
+    new Vue({
+      el: '#app6',
+      data: {
+        people: [
+          {name: 'Tanya', age: 23},
+          {name: 'Sergei', age: 20},
+          {name: 'Sveta', age: 29}
+        ]
       }
     })
   </script>
