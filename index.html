@@ -82,6 +82,7 @@
   <div id="app7">
     <p>Counter {{ counter }} \ {{ counter2 }}</p>
     <p>{{ result() }}</p>
+    <p>{{ computedResult }}</p>
     <button @click="add">Add</button>
     <button @click="sub">Sub</button>
     <button @click="counter2++">Add counter2</button>
@@ -215,6 +216,11 @@
         },
         result: function(){
           return this.condition = this.counter > 3 ? 'more than 3' : 'less than 3'
+        }
+      },
+      watch: {
+        counter: function(value) {
+          console.log(value)
         }
       }
     })
