@@ -3,6 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vue.js</title>
+  <style>
+    .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 1px solid #000;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .green {
+      background-color: green;
+    }
+  </style>
 </head>
 <body>
 	<div id="app">
@@ -31,6 +51,12 @@
   <div id="app2">
     <input type="text" v-model.lazy="inputValue">
     <h2>{{ inputValue }}</h2>
+  </div>
+
+  <div id="app3">
+    <div class="circle" @click="isActive = !isActive" :class="getCssClasses"></div>
+    <div class="circle" :class="color"></div>
+    <input type="text" v-model="color">
   </div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -83,6 +109,25 @@
       el: '#app2',
       data: {
         inputValue: 'Hello'
+      }
+    });
+
+    new Vue({
+      el: '#app3',
+      data: {
+        isActive: false,
+        color: 'blue'
+      },
+      computed: {
+        getCssClasses: function() {
+          return {
+            'red': this.isActive,
+            'green': !this.isActive
+          }
+        }
+      },
+      methods: {
+        
       }
     })
   </script>
