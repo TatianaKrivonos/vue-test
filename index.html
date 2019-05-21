@@ -28,6 +28,11 @@
     <button v-on:click="counter2++">Увеличить</button>
   </div>
 
+  <div id="app2">
+    <input type="text" v-model.lazy="inputValue">
+    <h2>{{ inputValue }}</h2>
+  </div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
     new Vue({
@@ -71,6 +76,13 @@
         onHover: function(event) {
           event.target.style.color = 'red'
         }
+      }
+    });
+
+    new Vue({
+      el: '#app2',
+      data: {
+        inputValue: 'Hello'
       }
     })
   </script>
