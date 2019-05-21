@@ -58,6 +58,12 @@
     <div class="circle" :class="color"></div>
     <input type="text" v-model="color">
   </div>
+  <hr>
+  <div id="app4">
+    <div class="circle" :style="circleStyle"></div>
+    <input type="text" v-model="color">
+    <input type="text" v-model="height">
+  </div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
@@ -128,6 +134,22 @@
       },
       methods: {
         
+      }
+    });
+
+    new Vue({
+      el: '#app4',
+      data: {
+        color: 'blue',
+        height: ''
+      },
+      computed: {
+        circleStyle: function() {
+          return {
+            'background': this.color,   
+            'height': this.height + 'px'
+          }
+        }
       }
     })
   </script>
