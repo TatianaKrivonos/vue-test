@@ -14,14 +14,14 @@
     <p>If statement: {{ isOk ? 'I am Ok' : 'I am not Ok' }}</p>
     <p>Functions: {{ string.split('').reverse().join('') }}</p>
     <h1>
-      <a v-bind:href="url">Google</a>
+      <a :href="url">Google</a>
     </h1>
     <h2 v-html="link"></h2>
   </div>
 
   <div id="app1">
     <h2>{{ title }} = {{ counter }}</h2>
-    <button v-on:click="riseCounter(5, 'Изменено на 5', $event)">Увеличить на 5</button>
+    <button @click="riseCounter(5, 'Изменено на 5', $event)">Увеличить на 5</button>
     <button v-on:click="riseCounter(10, 'Изменено на 10', $event)">Увеличить на 10</button>
     <hr>
     <h2 v-on:mouseover="onHover">Счетчик2 = {{ counter2 }}</h2>
