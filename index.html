@@ -64,6 +64,14 @@
     <input type="text" v-model="color">
     <input type="text" v-model="height">
   </div>
+  <hr>
+  <div id="app5">
+    <h2 v-if="type === 'a'">A</h2>
+    <h2 v-else-if="type === 'b'">B</h2>
+    <h2 v-else-if="type === 'c'">C</h2>
+    <h2 v-else>Not</h2>
+    <input type="text" v-model="type">
+  </div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
@@ -150,6 +158,13 @@
             'height': this.height + 'px'
           }
         }
+      }
+    });
+
+    new Vue({
+      el: '#app5',
+      data: {
+        type: 'a'
       }
     })
   </script>
