@@ -98,6 +98,11 @@
     <button @click="updateFirstTitle()">updateFirstTitle</button>
   </div>
 
+  <div id="app10">
+    <h2 ref="heading">{{ title }}</h2>
+    <button @click="updateFirstTitle()">Updated title</button>
+  </div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
     new Vue({
@@ -254,6 +259,20 @@
         }
       }
     })
+
+     new Vue({
+      el: '#app10',
+      data: {
+        title: 'Hello Tanya'
+      },
+      methods: {
+        updateFirstTitle() {
+          this.title = 'New title'
+          this.$refs.heading.style.color = "red"
+          console.log(this.$refs.heading)
+        }
+      }
+     })
   </script>
 </body>
 </html>
