@@ -88,6 +88,16 @@
     <button @click="counter2++">Add counter2</button>
   </div>
 
+  <div id="app8">
+    <h2>{{ title }}</h2>
+    <button @click="title='Updated title'">Updated title</button>
+  </div>
+
+  <div id="app9">
+    <h2>{{ title }}</h2>
+    <button @click="updateFirstTitle()">updateFirstTitle</button>
+  </div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script>
     new Vue({
@@ -221,6 +231,26 @@
       watch: {
         counter: function(value) {
           console.log(value)
+        }
+      }
+    });
+   var vue8 = new Vue({
+      el: '#app8',
+      data: {
+        title: 'Hello World'
+      }
+    })
+
+   console.log(vue8);
+
+    new Vue({
+      el: '#app9',
+      data: {
+        title: 'Hello Tanya'
+      },
+      methods: {
+        updateFirstTitle: function(){
+          vue8.title = 'Updated from app9'
         }
       }
     })
