@@ -95,12 +95,16 @@
 
   <div id="app9">
     <h2>{{ title }}</h2>
-    <button @click="updateFirstTitle()">updateFirstTitle</button>
+    <button @click="updateFirstTitle">updateFirstTitle</button>
   </div>
 
   <div id="app10">
     <h2 ref="heading">{{ title }}</h2>
     <button @click="updateFirstTitle()">Updated title</button>
+  </div>
+
+  <div id="app11">
+    <my-component v-for="c in 5"></my-component>
   </div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -272,7 +276,30 @@
           console.log(this.$refs.heading)
         }
       }
-     })
+     });
+
+      Vue.component('my-component', {
+        template: `
+          <div style="border: 1px solid #000">
+            <h2>Counter: {{ counter }}</h2>
+            <button @click="add">Add</button>
+          </div>
+        `,
+        data: function() {
+          return  {
+            counter: 0
+          }
+        },
+        methods: {
+          add: function() {
+            this.counter++
+          }
+        }
+      })
+
+      new Vue({
+        el: '#app11'
+      })
   </script>
 </body>
 </html>
